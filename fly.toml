@@ -1,0 +1,16 @@
+# fly.toml app configuration file generated for restless-wood-4970 on 2023-05-07T10:35:42-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "restless-wood-4970"
+primary_region = "atl"
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true

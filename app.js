@@ -1,6 +1,7 @@
 const express = require("express");
 const volleyball = require("volleyball");
 const app = express();
+const { PORT = 1337 } = process.env || "8080";
 
 app.use(volleyball);
 app.use(express.static("public"));
@@ -12,8 +13,6 @@ app.use((err, req, res, next) => {
     message: err.message,
   });
 });
-
-const { PORT = 1337 } = process.env;
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
